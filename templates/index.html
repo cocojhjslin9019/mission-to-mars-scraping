@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>Mission to Mars</title>
+
+</head>
+<body style="background-color: #eae6df">
+<!--   Jquery+bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <div class="container">
+  	<div style="background-color: #d4bab0; text-align: 	center;">
+  		<h1 style="color: #6e7376">Mission to Mars</h1>
+  		<p><a class="btn btn-primary btn-lg" href="/scrape" role = button>Scrape New Data</a></p>
+  	</div>
+
+<!--   	Data from scraping -->
+  	<div class="container">
+  		<h2 style="background-color: #e4d5c8; color: #6e7376">Latest Mars News</h2>
+  			<h4>{{mars_data_dict.news_title}}</h4>
+  			<p>{{mars_data_dict.news_p}}</p>
+  	</div>
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-md-8">
+  				<h2 style="background-color: #e4d5c8; color: #6e7376">Featured Mars Image</h2>
+  				<img src="{{mars_data_dict.featured_img_url}}" alt="Featured Mars Image">
+  			</div>
+  			<div class="col-md-4">
+  				<h2 style="background-color: #e4d5c8; color: #6e7376">Mars Facts</h2>
+  				<div>{{mars_data_dict.mars_facts|safe}}</div>
+  			</div>
+  			<div class="col-md-12">
+  				<h2 style="background-color: #e4d5c8; color: #6e7376">Mars Hemispheres</h2>
+  				<div class="row">
+  					{% for item in mars_data_dict.hem_img_urls %}
+  					<div class="col-md-6">
+  						<div>
+  							<img src="{{hem_img_class.final_img_url}}">
+  							<div>
+  								<p>{{hem_img_class.title}}</p>
+  							</div>
+  						</div>
+  					</div>
+  					{% endfor %}
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  	
+  </div>
+</body>
+</html>
