@@ -85,7 +85,6 @@ def scrape():
         #append
         hem_img_urls.append({'title':img_title, 'img_url':final_img_url})
 
-    hem_img_urls
     browser.quit()
     
     print("---------------Mars Hemispheres Scraping Complete---------------")

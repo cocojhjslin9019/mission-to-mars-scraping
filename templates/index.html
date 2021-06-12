@@ -17,7 +17,7 @@
   <div class="container">
   	<div style="background-color: #d4bab0; text-align: 	center;">
   		<h1 style="color: #6e7376">Mission to Mars</h1>
-  		<p><a class="btn btn-primary btn-lg" href="/scrape" role = button>Scrape New Data</a></p>
+  		<p><a style="background-color: #7f867b" class="btn btn-primary btn-lg" href="/scrape" role = button>Scrape New Data</a></p>
   	</div>
 
 <!--   	Data from scraping -->
@@ -40,11 +40,11 @@
   				<h2 style="background-color: #e4d5c8; color: #6e7376">Mars Hemispheres</h2>
   				<div class="row">
   					{% for item in mars_data_dict.hem_img_urls %}
-  					<div class="col-md-6">
+  					<div class="col-md-3 col-sm-6">
   						<div>
-  							<img src="{{hem_img_class.final_img_url}}">
+  							<img src="{{item.img_url}}" alt="{{item.title}}" width="250" height="250">
   							<div>
-  								<p>{{hem_img_class.title}}</p>
+  								<h4>{{item.title}}</h4>
   							</div>
   						</div>
   					</div>
